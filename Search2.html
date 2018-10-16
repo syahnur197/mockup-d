@@ -25,6 +25,11 @@
     <link href="css/agency.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/custom.css">
+    <style>
+      .test {
+        margin-left: 15px;
+      }
+    </style>
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -65,6 +70,7 @@
     $(() => {
       loadCategory();
       listHiderClick();
+      backButton();
     })
 
     function loadCategory() {
@@ -88,13 +94,22 @@
         $.get('http://mockup.test/asset/category.json', {}, function (data) {
           let vendors = data[cat];
           let string = ``;
+          string += `<li class="list-group-item d-flex justify-content-between align-items-center">${cat}
+            <button class="btn btn-primary btn-sm back-btn">Back</button>
+          </li><i>`;
           vendors.forEach(function(vendor) {
-            string += `<li class="list-group-item d-flex justify-content-between align-items-center list-hider" data-value="${cat}">
+            string += `<li class="list-group-item d-flex justify-content-between align-items-center list-hider test" data-value="${cat}">
               ${vendor}
             </li>`; 
           })
           $("#category_list").html(string)
         })
+      })
+    }
+
+    function backButton() {
+      $("body").on('click', ".back-btn", function (e) {
+        loadCategory();
       })
     }
   </script>
