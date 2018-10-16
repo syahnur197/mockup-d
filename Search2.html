@@ -74,7 +74,7 @@
     })
 
     function loadCategory() {
-      $.get('http://mockup.test/asset/category.json', {}, function(data) {
+      $.get('http://localhost/mockup/asset/category.json', {}, function(data) {
         let categories = Object.keys(data);
         let string = ``;
         categories.forEach(function(cat) {
@@ -91,7 +91,7 @@
     function listHiderClick() {
       $('body').on('click', '.list-hider', function(e) {
         let cat = $(this).data('value');
-        $.get('http://mockup.test/asset/category.json', {}, function (data) {
+        $.get('http://localhost/mockup/asset/category.json', {}, function (data) {
           let vendors = data[cat];
           let string = ``;
           string += `<li class="list-group-item d-flex justify-content-between align-items-center">${cat}
