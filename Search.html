@@ -77,27 +77,32 @@
     </ul>
   </div>
   
+<style>
+.test {
+  margin-left : 15px;
+}
+</style>
+
   <script>
     $(() => {
       $('.list-hider').on('click', function(){
-        let ayam = "yasir";
         let string = ` <ul class="list-group list-group-flush">
-      <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
         Apparels
-        <span class="badge badge-primary badge-pill">4</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
+        <a class="btn btn-primary btn-sm">Back</a>
+      </li><i>
+      <li class="list-group-item d-flex justify-content-between align-items-center test">
         Bokita
       </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
+      <li class="list-group-item d-flex justify-content-between align-items-center test">
           Ariani
       </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
+      <li class="list-group-item d-flex justify-content-between align-items-center test">
           Sharkia
       </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
+      <li class="list-group-item d-flex justify-content-between align-items-center test">
         Neelofa
-      </li>
+      </li></i>
     </ul>`;
         $('#content_list').html(string);
 
@@ -111,7 +116,7 @@
 
     <div class="row fixed-bottom bg-dark text-light">
       <div class="col text-center py-3">
-        <a href="#">
+        <a href="index.html">
           <i class="fa fa-map h4" aria-hidden="true"></i>
         </a>
       </div>
