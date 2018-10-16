@@ -182,17 +182,17 @@ img::-moz-selection {
 
 header.masthead {
   text-align: center;
-  color: #fff;
-  background-image: url(https://blackrockdigital.github.io/startbootstrap-agency/img/header-bg.jpg);
-  background-repeat: no-repeat;
+  color: #262626;
+  /* background-image: url(https://blackrockdigital.github.io/startbootstrap-agency/img/header-bg.jpg); */
+  /* background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
-  background-size: cover
+  background-size: cover */
 }
 
 header.masthead .intro-text {
-  padding-top: 150px;
-  padding-bottom: 100px
+  padding-top: 50px;
+  padding-bottom: 50px
 }
 
 header.masthead .intro-text .intro-lead-in {
