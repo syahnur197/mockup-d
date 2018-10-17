@@ -2,6 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+.test {
+  margin-left : 15px;
+}
+</style>    
+
   <head>
 
     <meta charset="utf-8">
@@ -41,11 +47,13 @@
       </div>
     </nav>
 
+
+
   <p>
     <div class="col">
       <div class="input-group mb-5">
         <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fa fa-map"></i></span>
+          <a tabindex="0"  id="popover" class="input-group-text" role="button" data-toggle="popover" data-trigger="focus" data-content="" title="Full Map ICC"><i class="fa fa-map"></i></a>
         </div>
         <input type="text" class="form-control" aria-label="" placeholder="Search">
         <div class="input-group-append">
@@ -76,66 +84,6 @@
       </li>
     </ul>
   </div>
-  
-<style>
-.test {
-  margin-left : 15px;
-}
-</style>
-
-
-  <script>
-    $(() => {
-      $('body').on('click', '.list-hider', function(){
-        let string = ` <ul class="list-group list-group-flush">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        Apparels
-        <a class="btn btn-primary btn-sm" id="back-btn">Back</a>
-      </li><i>
-      <li class="list-group-item d-flex justify-content-between align-items-center test">
-        Bokita
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center test">
-          Ariani
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center test">
-          Sharkia
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center test">
-        Neelofa
-      </li></i>
-    </ul>`;
-        $('#content_list').html(string);
-
-      })
-
-      $("body").on('click', "#back-btn", function(e) {
-        let string = `<ul class="list-group list-group-flush">
-          <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
-            Apparels
-            <span class="badge badge-primary badge-pill">4</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
-                  Electronics
-            <span class="badge badge-primary badge-pill">2</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
-                  Food
-            <span class="badge badge-primary badge-pill">14</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
-            Kitchen Utensils
-            <span class="badge badge-primary badge-pill">5</span>
-          </li>
-        </ul>`;
-        $("#content_list").html(string);
-      })
-    })
-  </script>
-
-
-
-  
 
     <div class="row fixed-bottom bg-dark text-light">
       <div class="col text-center py-3">
@@ -174,3 +122,117 @@
   </body>
 
 </html>
+
+
+<script>
+  $(() => {
+
+  $('.popover-dismiss').popover({
+  trigger: 'focus'
+  });
+
+  var image = '<img src="https://developer.chrome.com/extensions/examples/api/idle/idle_simple/sample-128.png">';
+  $('#popover').popover({
+    placement: 'right',
+    content: image,
+    html: true
+  });
+
+})
+</script>
+<script>
+  $(() => {
+    $('.list-hider').on('click', function(){
+      let string = ` <ul class="list-group list-group-flush">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <h1>Food</h1>
+      <a class="btn btn-primary btn-sm">Back</a>
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between align-items-center test">
+      <div class="media">
+
+        <div class="media-left" style="margin-right:20px">
+          <img src="images/kfc.png" class="media-object" style="max-width:100px; max-height:50px">
+        </div>
+
+        <div class="media-body">
+          <h4 class="media-heading">KFC</h4>
+          <p>
+            <div class="row">
+              <div class="col-xs-8">
+                Lorem ipsum...Lorem ipsum...Lorem ipsum...Lorem ipsum...
+              </div>
+              <div class="col-xs-4">
+                dsa
+              </div>
+            </div>
+          </p>
+        </div>
+
+      </div>
+    </li>
+
+    <li class="list-group-item d-flex justify-content-between align-items-center test">
+      <div class="media">
+
+        <div class="media-left" style="margin-right:20px">
+          <img src="images/mc_d.png" class="media-object" style="max-width:100px; max-height:50px">
+        </div>
+
+        <div class="media-body">
+          <h4 class="media-heading">Mc Donald</h4>
+          <p>Lorem ipsum...</p>
+        </div>
+
+      </div>
+    </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center test">
+      <div class="media">
+
+        <div class="media-left" style="margin-right:20px">
+          <img src="images/sugarbun.png" class="media-object" style="max-width:100px; max-height:50px">
+        </div>
+
+        <div class="media-body">
+          <h4 class="media-heading">Sugarbun</h4>
+          <p>Lorem ipsum...</p>
+        </div>
+
+      </div>
+    </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center test">
+      <div class="media">
+
+        <div class="media-left" style="margin-right:20px">
+          <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
+        </div>
+
+        <div class="media-body">
+          <h4 class="media-heading">Burger King</h4>
+          <p>Lorem ipsum...</p>
+        </div>
+
+      </div>
+    </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center test">
+      <div class="media">
+
+        <div class="media-left" style="margin-right:20px">
+          <img src="images/kfc.png" class="media-object" style="max-width:100px; max-height:50px">
+        </div>
+
+        <div class="media-body">
+          <h4 class="media-heading">KFC</h4>
+          <p>Lorem ipsum...</p>
+        </div>
+
+      </div>
+    </li>
+
+  </ul>`;
+      $('#content_list').html(string);
+
+    })
+  })
+</script>
