@@ -6,6 +6,8 @@
 .test {
   margin-left : 15px;
 }
+
+
 </style>    
 
   <head>
@@ -41,7 +43,7 @@
   <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="index.html">Logo here</a>
       </div>
@@ -63,9 +65,24 @@
     </div>
   </p>
 
+    <div class="row px-4 my-2">
+      <div class="col px-1 bg-dark py-5 mx-2 text-center">
+        <img src="https://flaticons.net/gd/makefg.php?i=icons/Application/Wifi.png&amp;r=255&amp;g=255&amp;b=255" style="height: 50px; width: 50px">
+      </div>
+      <div class="col px-1 bg-dark py-5 mx-2 text-center">
+      <img src="https://flaticons.net/gd/makefg.php?i=icons/Miscellaneous/Map-Location.png&amp;r=255&amp;g=255&amp;b=255" style="height: 50px; width: 50px">
+      </div>
+    </div>
+
+
 
   <div id="content_list" class="col">
     <ul class="list-group list-group-flush">
+      
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <h1>Search Categories</h1>
+      </li>
+
       <li class="list-group-item d-flex justify-content-between align-items-center list-hider">
         Apparels
         <span class="badge badge-primary badge-pill">4</span>
@@ -127,11 +144,7 @@
 <script>
   $(() => {
 
-  $('.popover-dismiss').popover({
-  trigger: 'focus'
-  });
-
-  var image = '<img src="https://developer.chrome.com/extensions/examples/api/idle/idle_simple/sample-128.png">';
+  var image = '<img src="images/ICC.jpg" style="max-height:500px">';
   $('#popover').popover({
     placement: 'right',
     content: image,
@@ -146,10 +159,11 @@
       let string = ` <ul class="list-group list-group-flush">
     <li class="list-group-item d-flex justify-content-between align-items-center">
       <h1>Food</h1>
-      <a class="btn btn-primary btn-sm">Back</a>
+      <a class="btn btn-primary btn-sm">BACK</a>
     </li>
 
-    <li class="list-group-item d-flex justify-content-between align-items-center test">
+    <li class="list-group-item justify-content-between align-items-center test">
+      
       <div class="media">
 
         <div class="media-left" style="margin-right:20px">
@@ -158,22 +172,18 @@
 
         <div class="media-body">
           <h4 class="media-heading">KFC</h4>
-          <p>
-            <div class="row">
-              <div class="col-xs-8">
-                Lorem ipsum...Lorem ipsum...Lorem ipsum...Lorem ipsum...
-              </div>
-              <div class="col-xs-4">
-                dsa
-              </div>
-            </div>
-          </p>
+          <p>Lorem ipsum...Lorem ipsum...Lorem ipsum...Lorem ipsum...</p>
+        </div>
+
+        <div class="media-right">
+          <a href=""><u style="color:blue">View</u></a>
         </div>
 
       </div>
+
     </li>
 
-    <li class="list-group-item d-flex justify-content-between align-items-center test">
+    <li class="list-group-item  justify-content-between align-items-center test">
       <div class="media">
 
         <div class="media-left" style="margin-right:20px">
@@ -185,9 +195,13 @@
           <p>Lorem ipsum...</p>
         </div>
 
+        <div class="media-right">
+          <a href=""><u style="color:blue">View</u></a>
+        </div>
+
       </div>
     </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center test">
+        <li class="list-group-item justify-content-between align-items-center test">
       <div class="media">
 
         <div class="media-left" style="margin-right:20px">
@@ -199,9 +213,13 @@
           <p>Lorem ipsum...</p>
         </div>
 
+        <div class="media-right">
+          <a href=""><u style="color:blue">View</u></a>
+        </div>
+
       </div>
     </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center test">
+        <li class="list-group-item justify-content-between align-items-center test">
       <div class="media">
 
         <div class="media-left" style="margin-right:20px">
@@ -213,22 +231,70 @@
           <p>Lorem ipsum...</p>
         </div>
 
+        <div class="media-right">
+          <a href=""><u style="color:blue">View</u></a>
+        </div>
+
       </div>
     </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center test">
+
+            <li class="list-group-item justify-content-between align-items-center test">
       <div class="media">
 
         <div class="media-left" style="margin-right:20px">
-          <img src="images/kfc.png" class="media-object" style="max-width:100px; max-height:50px">
+          <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
         </div>
 
         <div class="media-body">
-          <h4 class="media-heading">KFC</h4>
+          <h4 class="media-heading">Burger King</h4>
           <p>Lorem ipsum...</p>
+        </div>
+
+        <div class="media-right">
+          <a href=""><u style="color:blue">View</u></a>
         </div>
 
       </div>
     </li>
+
+            <li class="list-group-item justify-content-between align-items-center test">
+      <div class="media">
+
+        <div class="media-left" style="margin-right:20px">
+          <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
+        </div>
+
+        <div class="media-body">
+          <h4 class="media-heading">Burger King</h4>
+          <p>Lorem ipsum...</p>
+        </div>
+
+        <div class="media-right">
+          <a href=""><u style="color:blue">View</u></a>
+        </div>
+
+      </div>
+    </li>
+
+            <li class="list-group-item justify-content-between align-items-center test">
+      <div class="media">
+
+        <div class="media-left" style="margin-right:20px">
+          <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
+        </div>
+
+        <div class="media-body">
+          <h4 class="media-heading">Burger King</h4>
+          <p>Lorem ipsum...</p>
+        </div>
+
+        <div class="media-right">
+          <a href=""><u style="color:blue">View</u></a>
+        </div>
+
+      </div>
+    </li>
+
 
   </ul>`;
       $('#content_list').html(string);
