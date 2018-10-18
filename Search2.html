@@ -1,106 +1,100 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Agency - Start Bootstrap Theme</title>
+  <!-- Bootstrap core CSS -->
+  <link href="https://blackrockdigital.github.io/startbootstrap-agency/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="https://blackrockdigital.github.io/startbootstrap-agency/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+    type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <!-- Custom styles for this template -->
+  <link href="css/agency.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <style>
+    .test {
+      margin-left: 15px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+</head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Agency - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://blackrockdigital.github.io/startbootstrap-agency/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="https://blackrockdigital.github.io/startbootstrap-agency/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-    <!-- Custom styles for this template -->
-    <link href="css/agency.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/custom.css">
-    <style>
-      .test {
-        margin-left: 15px;
-      }
-    </style>
-
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  </head>
-
-  <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.html">Logo here</a>
-      </div>
-    </nav>
-
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="index.html">Logo here</a>
+    </div>
+  </nav>
   <p>
     <div class="col">
       <div class="input-group mb-5">
         <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fa fa-map"></i></span>
+          <span class="input-group-text">
+            <i class="fa fa-map"></i>
+          </span>
         </div>
         <input type="text" class="form-control" aria-label="" placeholder="Search">
         <div class="input-group-append">
-          <span class="input-group-text"><i class="fa fa-search"></i></span>
+          <span class="input-group-text">
+            <i class="fa fa-search"></i>
+          </span>
         </div>
       </div>
     </div>
   </p>
-
-
   <div id="content_list" class="col">
     <ul class="list-group list-group-flush" id="category_list">
     </ul>
   </div>
-  
   <script>
     $(() => {
+      let url = 'http://mockup.test';
+      localStorage.setItem('url', url);
       loadCategory();
       listHiderClick();
       backButton();
     })
 
     function loadCategory() {
-      $.get('http://localhost/mockup/asset/category.json', {}, function(data) {
+      let url = localStorage.getItem('url');
+      $.get(url+'/asset/category.json', {}, function (data) {
         let categories = Object.keys(data);
         let string = ``;
-        categories.forEach(function(cat) {
+        categories.forEach(function (cat) {
           let count = data[cat].length;
-            string += `<li class="list-group-item d-flex justify-content-between align-items-center list-hider" data-value="${cat}">
-              ${cat}
-              <span class="badge badge-primary badge-pill">${count}</span>
-            </li>`; 
+          string += `<li class="list-group-item d-flex justify-content-between align-items-center list-hider" data-value="${cat}">
+                ${cat}
+                <span class="badge badge-primary badge-pill">${count}</span>
+              </li>`;
         })
         $("#category_list").html(string)
       })
     }
 
     function listHiderClick() {
-      $('body').on('click', '.list-hider', function(e) {
+      let url = localStorage.getItem('url');
+      $('body').on('click', '.list-hider', function (e) {
         let cat = $(this).data('value');
-        $.get('http://localhost/mockup/asset/category.json', {}, function (data) {
+        $.get(url+'/asset/category.json', {}, function (data) {
           let vendors = data[cat];
           let string = ``;
           string += `<li class="list-group-item d-flex justify-content-between align-items-center">${cat}
-            <button class="btn btn-primary btn-sm back-btn">Back</button>
-          </li><i>`;
-          vendors.forEach(function(vendor) {
+              <button class="btn btn-primary btn-sm back-btn">Back</button>
+            </li><i>`;
+          vendors.forEach(function (vendor) {
             string += `<li class="list-group-item d-flex justify-content-between align-items-center list-hider test" data-value="${cat}">
-              ${vendor}
-            </li>`; 
+                ${vendor}
+              </li>`;
           })
           $("#category_list").html(string)
         })
@@ -113,43 +107,33 @@
       })
     }
   </script>
-
-
-
-  
-
-    <div class="row fixed-bottom bg-dark text-light">
-      <div class="col text-center py-3">
-        <a href="#">
-          <i class="fa fa-map h4" aria-hidden="true"></i>
-        </a>
-      </div>
-      <div class="col text-center py-3 border-right border-left h4">
-        <a href="search.html">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </a>
-      </div>
-      <div class="col text-center py-3">
-        <a href="#">
-          <i class="fa fa-cogs h4" aria-hidden="true"></i>
-        </a>
-      </div>
+  <div class="row fixed-bottom bg-dark text-light">
+    <div class="col text-center py-3">
+      <a href="#">
+        <i class="fa fa-map h4" aria-hidden="true"></i>
+      </a>
     </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/jquery/jquery.min.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-agency/js/jqBootstrapValidation.js"></script>
-    <script src="https://blackrockdigital.github.io/startbootstrap-agency/js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="https://blackrockdigital.github.io/startbootstrap-agency/js/agency.min.js"></script>
-
-  </body>
+    <div class="col text-center py-3 border-right border-left h4">
+      <a href="search.html">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="col text-center py-3">
+      <a href="#">
+        <i class="fa fa-cogs h4" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/jquery/jquery.min.js"></script>
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Contact form JavaScript -->
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/js/jqBootstrapValidation.js"></script>
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/js/contact_me.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="https://blackrockdigital.github.io/startbootstrap-agency/js/agency.min.js"></script>
+</body>
 
 </html>
