@@ -126,111 +126,116 @@
 </script>
 <script>
   $(() => {
-    $('.list-hider').on('click', function () {
+    $('body').on('click', '.back-btn', function(e) {
+      let string = localStorage.getItem('content_list');
+      $('#content_list').html(string);
+    })
+    $('body').on('click', '.list-hider', function () {
       let string = `<ul class="list-group list-group-flush">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <h1>Food</h1>
-    <a class="btn btn-primary btn-sm">BACK</a>
-  </li>
-  <li class="list-group-item justify-content-between align-items-center test">
-    <div class="media">
-      <div class="media-left" style="margin-right:20px">
-        <img src="images/kfc.png" class="media-object" style="max-width:100px; max-height:50px">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">KFC</h4>
-        <p>Lorem ipsum...Lorem ipsum...Lorem ipsum...Lorem ipsum...</p>
-      </div>
-      <div class="media-right">
-        <a href=""><u style="color:blue">View</u></a>
-      </div>
-    </div>
-  </li>
-  <li class="list-group-item  justify-content-between align-items-center test">
-    <div class="media">
-      <div class="media-left" style="margin-right:20px">
-        <img src="images/mc_d.png" class="media-object" style="max-width:100px; max-height:50px">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Mc Donald</h4>
-        <p>Lorem ipsum...</p>
-      </div>
-      <div class="media-right">
-        <a href=""><u style="color:blue">View</u></a>
-      </div>
-    </div>
-  </li>
-  <li class="list-group-item justify-content-between align-items-center test">
-    <div class="media">
-      <div class="media-left" style="margin-right:20px">
-        <img src="images/sugarbun.png" class="media-object" style="max-width:100px; max-height:50px">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Sugarbun</h4>
-        <p>Lorem ipsum...</p>
-      </div>
-      <div class="media-right">
-        <a href=""><u style="color:blue">View</u></a>
-      </div>
-    </div>
-  </li>
-  <li class="list-group-item justify-content-between align-items-center test">
-    <div class="media">
-      <div class="media-left" style="margin-right:20px">
-        <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Burger King</h4>
-        <p>Lorem ipsum...</p>
-      </div>
-      <div class="media-right">
-        <a href=""><u style="color:blue">View</u></a>
-      </div>
-    </div>
-  </li>
-  <li class="list-group-item justify-content-between align-items-center test">
-    <div class="media">
-      <div class="media-left" style="margin-right:20px">
-        <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Burger King</h4>
-        <p>Lorem ipsum...</p>
-      </div>
-      <div class="media-right">
-        <a href=""><u style="color:blue">View</u></a>
-      </div>
-    </div>
-  </li>
-  <li class="list-group-item justify-content-between align-items-center test">
-    <div class="media">
-      <div class="media-left" style="margin-right:20px">
-        <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Burger King</h4>
-        <p>Lorem ipsum...</p>
-      </div>
-      <div class="media-right">
-        <a href=""><u style="color:blue">View</u></a>
-      </div>
-    </div>
-  </li>
-  <li class="list-group-item justify-content-between align-items-center test">
-    <div class="media">
-      <div class="media-left" style="margin-right:20px">
-        <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">Burger King</h4>
-        <p>Lorem ipsum...</p>
-      </div>
-      <div class="media-right">
-        <a href=""><u style="color:blue">View</u></a>
-      </div>
-    </div>
-  </li>
-</ul>`;
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h1>Food</h1>
+          <a class="btn btn-primary btn-sm back-btn">BACK</a>
+        </li>
+        <li class="list-group-item justify-content-between align-items-center test">
+          <div class="media">
+            <div class="media-left" style="margin-right:20px">
+              <img src="images/kfc.png" class="media-object" style="max-width:100px; max-height:50px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">KFC</h4>
+              <p>Lorem ipsum...Lorem ipsum...Lorem ipsum...Lorem ipsum...</p>
+            </div>
+            <div class="media-right">
+              <a href=""><u style="color:blue">View</u></a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item  justify-content-between align-items-center test">
+          <div class="media">
+            <div class="media-left" style="margin-right:20px">
+              <img src="images/mc_d.png" class="media-object" style="max-width:100px; max-height:50px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Mc Donald</h4>
+              <p>Lorem ipsum...</p>
+            </div>
+            <div class="media-right">
+              <a href=""><u style="color:blue">View</u></a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item justify-content-between align-items-center test">
+          <div class="media">
+            <div class="media-left" style="margin-right:20px">
+              <img src="images/sugarbun.png" class="media-object" style="max-width:100px; max-height:50px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Sugarbun</h4>
+              <p>Lorem ipsum...</p>
+            </div>
+            <div class="media-right">
+              <a href=""><u style="color:blue">View</u></a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item justify-content-between align-items-center test">
+          <div class="media">
+            <div class="media-left" style="margin-right:20px">
+              <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Burger King</h4>
+              <p>Lorem ipsum...</p>
+            </div>
+            <div class="media-right">
+              <a href=""><u style="color:blue">View</u></a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item justify-content-between align-items-center test">
+          <div class="media">
+            <div class="media-left" style="margin-right:20px">
+              <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Burger King</h4>
+              <p>Lorem ipsum...</p>
+            </div>
+            <div class="media-right">
+              <a href=""><u style="color:blue">View</u></a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item justify-content-between align-items-center test">
+          <div class="media">
+            <div class="media-left" style="margin-right:20px">
+              <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Burger King</h4>
+              <p>Lorem ipsum...</p>
+            </div>
+            <div class="media-right">
+              <a href=""><u style="color:blue">View</u></a>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item justify-content-between align-items-center test">
+          <div class="media">
+            <div class="media-left" style="margin-right:20px">
+              <img src="images/burgerking.png" class="media-object" style="max-width:100px; max-height:50px">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Burger King</h4>
+              <p>Lorem ipsum...</p>
+            </div>
+            <div class="media-right">
+              <a href=""><u style="color:blue">View</u></a>
+            </div>
+          </div>
+        </li>
+      </ul>`;
+      localStorage.setItem('content_list', $('#content_list').html());
       $('#content_list').html(string);
 
     })

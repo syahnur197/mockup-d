@@ -1,18 +1,10 @@
 {
-  "Apparels": [
-    "Bokkita",
-    "Shariani",
-    "Neealofa",
-    "shaaaaadiq"
-  ],
-  "Foods": [
-    "KFC",
-    "Jollibee",
-    "McDonald"
-  ],
-  "Electronics": [
-    "Apple",
-    "Samsung",
-    "HTC"
+  "categories" : [
+    {
+      "0" : "Apparels",
+      "1" : "Foods",
+      "2" : "Electronics",
+      "3" : "Gadget"
+    }
   ]
 }
