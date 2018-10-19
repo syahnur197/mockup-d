@@ -183,11 +183,14 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: #262626;
-  /* background-image: url(http://mockup.test/images/techxpo.jpg);
+  background:linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ), url(http://74f2c91c.ngrok.io/images/plenary_hallway.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
-  background-size: cover */
+  background-size: cover
 }
 
 header.masthead .intro-text {
@@ -196,6 +199,7 @@ header.masthead .intro-text {
 }
 
 header.masthead .intro-text .intro-lead-in {
+  color: white;
   font-size: 22px;
   font-style: italic;
   line-height: 22px;
